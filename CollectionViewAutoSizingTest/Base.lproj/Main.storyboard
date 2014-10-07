@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xaz-Xc-NCd">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="cg6-wS-sWd">
+            <objects>
+                <navigationController id="Xaz-Xc-NCd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wHm-RG-5ci">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WNd-uO-M27" kind="relationship" relationship="rootViewController" id="u1q-ct-C4W"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BeW-Xy-Akp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="550"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="G7P-bV-v7x">
+            <objects>
+                <collectionViewController id="WNd-uO-M27" customClass="TestViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hd6-x8-Nje">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vWU-mY-h3k">
+                            <size key="itemSize" width="320" height="200"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TestCell" id="JpT-Zo-JEC" customClass="TestCell">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65L-Yr-dJ8">
+                                            <rect key="frame" x="8" y="8" width="304" height="184"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="304" id="ihS-Gy-Ah0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="ihS-Gy-Ah0"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="65L-Yr-dJ8" secondAttribute="centerY" id="Fi4-uh-Y0N"/>
+                                    <constraint firstItem="65L-Yr-dJ8" firstAttribute="bottom" secondItem="JpT-Zo-JEC" secondAttribute="bottomMargin" id="HTJ-df-d0g"/>
+                                    <constraint firstItem="65L-Yr-dJ8" firstAttribute="top" secondItem="JpT-Zo-JEC" secondAttribute="topMargin" id="Ju9-lg-6m3"/>
+                                    <constraint firstItem="65L-Yr-dJ8" firstAttribute="leading" secondItem="JpT-Zo-JEC" secondAttribute="leadingMargin" id="a7g-TC-YLF"/>
+                                    <constraint firstItem="65L-Yr-dJ8" firstAttribute="trailing" secondItem="JpT-Zo-JEC" secondAttribute="trailingMargin" id="vKa-1v-aAC"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Fi4-uh-Y0N"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="label" destination="65L-Yr-dJ8" id="1hi-Re-pjO"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="WNd-uO-M27" id="s4B-k2-SoA"/>
+                            <outlet property="delegate" destination="WNd-uO-M27" id="s6q-Ws-bpW"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="5nk-RK-14Q"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dF8-gh-fbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909" y="550"/>
+        </scene>
+    </scenes>
+</document>
